@@ -125,14 +125,16 @@ const add = (data, level) => {
         }
         
     } catch (e) {
+        try {    
+            const dt = new Date().toUTCString();
 
-        const dt = new Date().toUTCString();
-
-        // ! Wonk it out to the console. If writing to the log is throwing exceptions, 
-        // ! we can't record that fact in the log... ;-))
-        console.error(`${dt}: ** ERROR ADDING ENTRY TO LOG **`);
-        console.error(`${dt}: Exception: ${e}`);
-        console.error(`${dt}: Stack: ${e.stack}`);
+            // ! Wonk it out to the console. If writing to the log is throwing exceptions, 
+            // ! we can't record that fact in the log... ;-))
+            console.error(`${dt}: ** ERROR ADDING ENTRY TO LOG **`);
+            console.error(`${dt}: Exception: ${e}`);
+            console.error(`${dt}: Stack: ${e.stack}`);
+        } catch (e2) {
+        }
     }
     
     return rv;

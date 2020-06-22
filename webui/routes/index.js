@@ -20,7 +20,10 @@ const get_router = context => {
             lg('started');
             
             // get report id
-            const reportid = req.query.reportid;
+            let reportid;
+            if (req && req.query) {
+                reportid = req.query.reportid;
+            }
             lg(`got report id: ${reportid}`);
 
             let r = null;
