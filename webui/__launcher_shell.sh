@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 export "LOG_LEVEL"="verbose"
-export "WEBAPP_PORT"="2427"
+export "PORT"="2427"
 export "DRIVERS_DATA_FILE_PATH"="c:\dev\verillospur\server\debrief-mileage\src\data\drivers.json"
 export "TEST_EXPORT_FILE_PATH"="c:\dev\verillospur\server\debrief-mileage\src\data\sample_export.txt"
 export "MILEAGE_DATA_INDICATORS"="Mileage|milege|Milage|miles|mls"

@@ -18,7 +18,8 @@ require('../welcome').run('webapp');
  */
 
 var config = require('../config');
-var port = normalizePort(config.WEBAPP.PORT || process.env.WEBAPP_PORT || '3000');
+//var port = normalizePort(config.WEBAPP.PORT || process.env.WEBAPP_PORT || '3000');
+var port = normalizePort(config.WEBAPP.PORT || process.env.PORT || '3000');
 app.set('port', port);
 
 /**

@@ -12,7 +12,7 @@ const config = () => {
         AUTO_START: true,
 
         // * Port to listen on
-        PORT: process.env.WEBAPP_PORT || 3000,
+        PORT: process.env.PORT || 3000,
         
         // * Directory names for various server dwubs
         // * Relative to ~/server/
