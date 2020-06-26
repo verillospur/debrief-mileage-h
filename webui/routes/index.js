@@ -20,12 +20,10 @@ const get_router = context => {
             lg('started');
             
             // get report id
-            let reportid;
-            if (req && req.query) {
-                reportid = req.query.reportid;
-            }
+            const reportid = req.query.reportid;
             lg(`got report id: ${reportid}`);
 
+            let visitlog_data = `ip:{${req.ip.toString()}|${req.connection.remoteAddress.toString()}|${req.headers['x-forwarded-for']}}};url:{${req.originalUrl}};`;
             let r = null;
             let showNotice = true;
             let hideForm = false;
@@ -34,7 +32,10 @@ const get_router = context => {
                 r = report.load(reportid);
                 showNotice = false;
                 hideForm = true;
+                visitlog_data = `reportid:{${reportid}};`
+                    + visitlog_data;
             }
+            require('../../igor').log_visit(visitlog_data);
 
             lg('rendering');
             res.render(
